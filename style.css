@@ -1,0 +1,8 @@
+:root { color-scheme: light dark; --bg:#fbf8ff; --fg:#1d1b20; --muted:#625b71; --accent:#6750a4; --card:#f3edf7; }
+@media (prefers-color-scheme: dark) { :root { --bg:#141218; --fg:#e6e0e9; --muted:#cac4d0; --accent:#d0bcff; --card:#211f26; } }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, sans-serif; }
+main { max-width:640px; margin:0 auto; padding:48px 16px; }
+h1 { margin:0 0 4px; } p { color:var(--muted); } a { color:var(--accent); }
+ul.apps { list-style:none; padding:0; }
+ul.apps li { background:var(--card); border-radius:16px; padding:16px; margin:12px 0; }
+ul.apps a.name { font-weight:600; font-size:1.1em; text-decoration:none; }
