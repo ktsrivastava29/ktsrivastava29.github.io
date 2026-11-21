@@ -24,7 +24,7 @@
 <main>
 <p><a href="./">← PaisaPebble</a></p>
 <h1>PaisaPebble Privacy Policy</h1>
-<p class="updated">Last updated: 17 November 2026</p>
+<p class="updated">Last updated: 22 November 2026</p>
 
 <p>PaisaPebble ("the app", "we") is an Android app for tracking personal expenses, splitting group
 expenses and planning upcoming payments. This policy explains what information the app uses, where
@@ -32,12 +32,13 @@ it is stored, and the choices you have. In short: <strong>without an account, yo
 your phone. If you sign in with Google, your data is stored in our cloud database so it can sync
 across your devices and be shared with the groups you join.</strong> We never sell your data.</p>
 
-<p>PaisaPebble only records amounts you type in. It does not connect to your bank, UPI or any
-payment service, and it never moves money.</p>
+<p>PaisaPebble only records amounts you type in, or payments you choose to save when the optional
+payment detection (section 4a) asks you. It does not connect to your bank, UPI or any payment
+service, and it never moves money.</p>
 
 <h2>1. Using the app without an account</h2>
 <p>You can use PaisaPebble without signing in. Everything you enter — transactions, accounts,
-categories, budgets, planned payments and groups — is stored only in the app's private storage on
+categories, budgets, planned payments, loans, savings goals and groups — is stored only in the app's private storage on
 your phone. Nothing is sent to us. Uninstalling the app deletes it.</p>
 
 <h2>2. If you sign in with Google</h2>
@@ -48,8 +49,11 @@ receive your Google password or access to your other Google data (Gmail, Drive, 
 <ul>
   <li>your profile: display name, email, profile photo link, currency and date preferences;</li>
   <li>personal records: transactions (amount, type, category, title, notes, date, account),
-      accounts, categories, transfers between your accounts, budgets, and planned / recurring
-      payments with their status;</li>
+      including whether you marked a transaction private, accounts, categories, transfers between
+      your accounts, budgets, planned / recurring payments with their status, loans you record (the
+      person's or lender's name if you enter one, amount, dates, notes, and for loan apps or banks an
+      optional loan number and interest rate) with their repayments, and savings goals with the
+      amounts you add or take out;</li>
   <li>groups you create or join: group name and settings, members, group expenses and how they were
       split, settlements, comments on expenses, an activity log (who added or changed what), and
       receipt photos that members attach to group expenses;</li>
@@ -73,6 +77,29 @@ add only people who expect to share expenses with you.</p>
       you choose.</li>
   <li><strong>Receipt scanning:</strong> when you scan a receipt, the text is read on your phone
       using Google ML Kit's on-device text recognition. The photo is not uploaded for scanning.</li>
+  <li><strong>Fingerprint / screen lock:</strong> unlocking private transactions uses Android's
+      own fingerprint, face or screen-lock check. The app never sees or stores your fingerprint,
+      face data or PIN — it only learns whether the check passed.</li>
+  <li><strong>Home screen widget:</strong> shows today's and this month's spending on your home
+      screen (as dots if you turned on "hide amounts"). It is drawn on your phone.</li>
+</ul>
+
+<h2>4a. Payment detection (optional, off by default)</h2>
+<p>If you turn on <em>Settings → Auto-detect payments</em> and allow notification access, the app
+reads notifications from payment, bank and SMS apps (for example Google Pay, PhonePe, Paytm, bank
+apps and your SMS app) to spot payments you just made, such as "₹250 paid to Swiggy". It then asks
+you "Log ₹250 · Swiggy?" so you can save it with one tap.</p>
+<ul>
+  <li>Only notifications from those kinds of apps are looked at; all others are ignored.</li>
+  <li>Only the amount and the payee name are taken from a payment notification. The rest of the
+      text — and any notification that is not an outgoing payment (OTPs, money received, offers,
+      reminders, personal messages) — is ignored and not stored.</li>
+  <li>This happens entirely on your phone. Notification content is never sent to us or anyone
+      else.</li>
+  <li>A payment is recorded only if you tap <em>Save</em> or <em>Edit</em>. It then becomes a normal
+      transaction (synced like any other if you are signed in, section 2).</li>
+  <li>You can turn it off in Settings at any time, or remove the app's notification access in
+      Android settings.</li>
 </ul>
 
 <h2>5. Permissions</h2>
@@ -81,6 +108,10 @@ add only people who expect to share expenses with you.</p>
   <li><strong>Notifications</strong>: for reminders about planned payments, budget alerts and group
       activity. You can turn each kind off in Settings.</li>
   <li><strong>Run at startup</strong>: so reminders are restored after your phone restarts.</li>
+  <li><strong>Notification access</strong> (optional): only if you turn on payment detection
+      (section 4a).</li>
+  <li><strong>Fingerprint / biometrics</strong>: to unlock private transactions with Android's
+      own check (section 4).</li>
   <li><strong>Camera and photos</strong>: only when you choose to take or pick a receipt or profile
       photo.</li>
   <li><strong>Advertising ID</strong>: used by Google AdMob to show and measure ads (section 7).</li>
