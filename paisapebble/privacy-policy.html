@@ -86,19 +86,23 @@ add only people who expect to share expenses with you.</p>
 
 <h2>4a. Payment detection (optional)</h2>
 <p>The app offers to turn on <em>Auto-detect payments</em>. Nothing is read until you agree and
-allow notification access for PaisaPebble in Android's settings. Once allowed, the app reads notifications from payment, bank and SMS apps (for example Google Pay, PhonePe, Paytm, bank
-apps and your SMS app) to spot payments you just made, such as "₹250 paid to Swiggy". It then asks
+allow notification access for PaisaPebble in Android's settings. Once allowed, Android passes
+the app your notifications; the app looks only at those from payment, bank and SMS apps (for example
+Google Pay, PhonePe, Paytm, bank apps and your SMS app), and not chat or shopping apps, to spot payments you just made, such as "₹250 paid to Swiggy". It then asks
 you "Log ₹250 · Swiggy?" so you can save it with one tap.</p>
 <ul>
-  <li>Only notifications from those kinds of apps are looked at; all others are ignored.</li>
-  <li>Only the amount and the payee name are taken from a payment notification. The rest of the
-      text — and any notification that is not an outgoing payment (OTPs, money received, offers,
-      reminders, personal messages) — is ignored and not stored.</li>
-  <li>This happens entirely on your phone. Notification content is never sent to us or anyone
-      else.</li>
-  <li>A payment is recorded only if you tap <em>Save</em> or <em>Edit</em>. It then becomes a normal
-      transaction, marked as added automatically (synced like any other if you are signed in,
-      section 2).</li>
+  <li>Notifications from all other apps are ignored without reading their text.</li>
+  <li>In those apps, including SMS, the text is checked on your phone for an outgoing payment. Only
+      the amount, the payee name, the time and the name of the app it came from are used. Text that
+      is not an outgoing payment (such as OTPs, money received, offers and personal messages) is
+      ignored and not stored.</li>
+  <li>To avoid asking twice about one payment, the app briefly keeps its amount, time, the app it
+      came from and a scrambled fingerprint (hash) of the notification on your phone.</li>
+  <li>The notification text is never sent to us or anyone else.</li>
+  <li>A payment is recorded only if you tap <em>Save</em>, or tap <em>Edit</em> and save the form.
+      It then becomes a normal transaction and, like any other, its amount, payee, time and notes
+      (which name the app) sync to our cloud database if you are signed in (section 2). Ones added
+      with <em>Save</em> are marked as added automatically.</li>
   <li>You can turn it off in Settings at any time, or remove the app's notification access in
       Android settings.</li>
 </ul>
